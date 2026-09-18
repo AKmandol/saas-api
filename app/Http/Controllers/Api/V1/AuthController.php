@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use App\Jobs\SendWelcomeEmail;
 
 class AuthController extends Controller
 {
@@ -65,6 +66,8 @@ class AuthController extends Controller
                 'token' => $token,
             ];
         });
+
+        SendWelcomeEmail::dispatch($result['user']->id)->afterCommit();
 
         return response()->json([
             'message' => 'Registration successful.',

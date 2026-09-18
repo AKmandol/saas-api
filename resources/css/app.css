@@ -1,9 +1,38 @@
-@import 'tailwindcss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+body {
+    background-color: #f8f9fa;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+}
+
+.sidebar .nav-link {
+    color: #adb5bd;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.router-link-active {
+    color: #fff;
+    background-color: #343a40;
+}
+
+.main-content {
+    min-width: 0;
+}
+
+.card {
+    border: none;
+}
+
+.table > :not(caption) > * > * {
+    vertical-align: middle;
 }
